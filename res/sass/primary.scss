@@ -1,0 +1,188 @@
+/* Import needed fonts */
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+/* Absolute the body and container */
+body, body .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Main Style */
+body {
+    font-family: 'Dosis', sans-serif;
+    // background-image: url("https://img.buzzfeed.com/buzzfeed-static/static/2014-03/enhanced/webdr06/20/17/original-1973-1395352632-3.jpg");
+    background-color: #134065;
+
+    .container {
+        background-color: white;
+        width: 75%;
+        left: 12.5%;
+        right: 12.5%;
+        height: auto;
+        box-shadow: 3px 0px 15px black;
+
+        .heading {
+            color: #A84014;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header-bar {
+            width: 100%;
+            height: 25%;
+            
+            display: grid;
+            align-items: center;
+            justify-items: center;
+
+            .heading-content {
+                text-align: center;
+
+                .heading, .subheading {
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .heading {
+                    font-size: 3em;
+                    color: #A84014;
+                }
+
+                .subheading {
+                    font-size: 1.5em;
+                    color: #134065;
+                }
+            }
+        }
+
+        .content {
+            overflow-y: scroll;
+
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+
+            .section {
+                margin-bottom: 10px;
+
+                &::last-child {
+                    margin-bottom: 0px;
+                }
+
+
+                &-1 {
+                    display: grid;
+                    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+                    grid-gap: 20px;
+    
+                    .col-1, .col-2 {
+                        grid-row: 1;
+                    }
+    
+                    .col-1 {
+                        grid-column-start: 1;
+                        grid-column-end: 10;
+                    }
+    
+                    .col-2 {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                &-2 {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+    
+                    img {
+                        position: relative;
+                        display: inline-block;
+                        flex-grow: 1;
+                        max-width: 25%;
+                    }
+                }
+
+                &-3 {
+                    padding-top: 10px;
+                    display: grid;
+                    grid-template-columns: 25% 75%;
+                    grid-gap: 20px;
+
+                    padding: 15px;
+    
+                    .col-1 {
+                        .heading {
+                            font-size: 1.5em;
+                        }
+                    }
+    
+                    .col-2 {
+                        .heading {
+                            font-size: 1.5em;
+                        }
+    
+                        form {
+                            padding: 5px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+    
+                            input {
+                                
+                                &::placeholder {
+                                    text-align: center;
+                                }
+
+                                height: 3em;
+
+                                &[type=submit] {
+                                    border: 0;
+                                    background-color: #2763C8;
+                                    color: white;
+                                }
+                            }
+    
+                            .row {
+                                width: 100%;
+                                flex-grow: 1;
+    
+                                padding-bottom: 5px;
+    
+                                &::last-child {
+                                    padding-bottom: 0px;
+                                }
+                            }
+    
+                            .input-row {
+                                display: grid;
+                                grid-template-columns: auto auto;
+                                grid-gap: 10px;
+
+                                &.email-row input {
+                                    grid-column-start: 1;
+                                    grid-column-end: 3;
+                                }
+
+                            }
+    
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+}
